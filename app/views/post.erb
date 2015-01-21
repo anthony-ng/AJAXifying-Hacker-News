@@ -1,5 +1,5 @@
 <header>
-  <h1>Hacker News</h1>
+  <a href="/posts"><h1>Hacker News</h1></a>
   <p>
     <a href="#posts">new</a>
     <a href="#">comments</a>
@@ -14,7 +14,7 @@
   <article id="<%= @post.id %>">
     <a href='/posts/<%= @post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
     <h2><a href='/posts/<%= @post.id %>'><%= @post.title %></a></h2>
-    <p><%= @post.content %></p>
+    <h5><%= @post.content %></h5>
     <p>
       <span class='points'><%= @post.points %></span>
       <span class='username'><%= @post.username %></span>
