@@ -10,22 +10,24 @@ end
 get '/posts/:id/vote' do
   post = Post.find(params[:id])
   post.votes.create(value: 1)
-  redirect "/posts"
+  redirect '/posts'
 end
 
 delete '/posts/:id' do
-  # write logic for deleting posts here.
+  post = Post.find(params[:id])
+  post.destroy
+  redirect '/posts'
 end
 
 post '/posts' do
   Post.create( title: params[:title],
-               username: Faker::Internet.user_name,
-               comment_count: rand(1000) )
+              content: Faker::Lorem.paragraph(10),
+              username: Faker::Internet.user_name,
+              comment_count: rand(1000) )
   redirect '/posts'
 end
 
 get '/posts/:id' do
   @post = Post.find(params[:id])
-  p @post
   erb :post
 end

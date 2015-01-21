@@ -20,7 +20,13 @@
       <span class='username'><%= @post.username %></span>
       <span class='timestamp'><%= @post.time_since_creation %></span>
       <span class='comment-count'><%= @post.comment_count %></span>
-      <a class="delete" href='/posts/<%= @post.id %>'></a>
+      <!-- <a class="delete" href='#'></a> -->
+      <a class="delete" href='#'>123
+        <form action="/posts/<%= @post.id %>" method="post">
+          <input type="hidden" name="_method"  value="delete">
+          <input type="submit" value="Delete" id="delete">
+        </form>
+      </a>
     </p>
   </article>
 
