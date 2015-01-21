@@ -13,6 +13,11 @@ get '/posts/:id/vote' do
   redirect '/posts'
 end
 
+get '/posts/:id/delete' do
+  @post = Post.find(params[:id])
+  erb :delete
+end
+
 delete '/posts/:id' do
   post = Post.find(params[:id])
   post.destroy
