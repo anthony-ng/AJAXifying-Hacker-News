@@ -14,7 +14,7 @@
   <article id="<%= @post.id %>">
     <a href='/posts/<%= @post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
     <h2><a href='/posts/<%= @post.id %>'><%= @post.title %></a></h2>
-    <h5><%= @post.content %></h5>
+    <p id="content_box"><%= @post.content %></p>
     <p>
       <span class='points'><%= @post.points %></span>
       <span class='username'><%= @post.username %></span>

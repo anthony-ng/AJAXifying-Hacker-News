@@ -119,3 +119,10 @@ form#posts input[type='submit'] {
 
 }
 
+#content_box {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: white;
+  font-size: 1.3em;
+  color: black;
+}
