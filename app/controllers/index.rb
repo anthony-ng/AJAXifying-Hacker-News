@@ -24,7 +24,8 @@ post '/posts' do
   redirect '/posts'
 end
 
-get '/post/:id' do
+get '/posts/:id' do
   @post = Post.find(params[:id])
+  p @post
   erb :post
 end
