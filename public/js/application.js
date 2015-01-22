@@ -13,7 +13,8 @@ $(document).ready(function() {
       type: 'GET',
       // dataType: 'JSON',
       data: $(this).serialize()
-    }).done(function() {
+    }).done(function(data) {
+      console.log(data);
       console.log("ajax success");
     }).fail(function() {
       console.log("ajax fail");
