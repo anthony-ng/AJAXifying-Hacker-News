@@ -1,25 +1,26 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
+  $('.vote-button').on('click', function(event) {
 
-//   $('.vote-button a').on('click', function(event) {
+    event.preventDefault();
 
-//     event.preventDefault();
+    console.log("Inside the click function");
+    console.log(this);
+    console.log(this.href);
 
-//     console.log("hello")
-//   })
-// });
+    $.ajax({
+      url: this.href,
+      type: 'GET',
+      // dataType: 'JSON',
+      data: $(this).serialize()
+    }).done(function() {
+      console.log("ajax success");
+    }).fail(function() {
+      console.log("ajax fail");
+    }).always(function() {
+      console.log("ajax completed");
+    });
 
-  // var target = $(event.target);
-
-  // var voteRequest = $.ajax({
-  //   url: '/posts/:id/vote',
-  //   type: 'GET',
-  //   data: ''
-  // }).done(function() {
-  //   console.log("success");
-  // }).fail(function() {
-  //   console.log("fail");
-  // }).always(function() {
-  //   console.log("completed");
-  // });
+  })
+});
 

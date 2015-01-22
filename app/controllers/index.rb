@@ -10,6 +10,9 @@ end
 get '/posts/:id/vote' do
   post = Post.find(params[:id])
   post.votes.create(value: 1)
+
+  p post.points
+
   redirect '/posts'
 end
 
